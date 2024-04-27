@@ -111,3 +111,144 @@ Cloud: Startups, SaaS offerings, new projects and companies.
 Hybrid: Orgs that started with their own datacenter, but can't fully move to a cloud due to effort of migration or security compliance. Ex. Banks, Fintech
 
 On-Premise: Orgs that cant run on cloud due to strict regulatory compliance or sheer size of org. Ex. Govs and hospitals
+
+## Innovation Waves
+
+Kondratiev waves are hypothesized cycle-like phenomena in the global world economy. The phenomenon is closely connected with Technology life cycles.
+
+Each wave irreversibly changes the society on a global scale. The latest wave is cloud technology
+
+Burning Platform - Company abandons old technology for new tech.  
+
+Digital Tranformation checklist: checklist which helps in transitioning to using AWS.
+
+## Evolution of Computing Power
+
+Computing Power - the throughput at which a computer can complete a computational task
+
+## Benefits of Cloud
+
+- Agility
+- Pay-as-you-go pricing
+- Economy of sclae
+- Global reach
+- Security
+- Reliability
+- High Availability
+- Scalability
+- Elasticity
+
+## Six Advantages to Cloud
+
+1. Trade capital expense for variable expense: Pay on demand and pay for only what you use
+2. Benefit from massive economes of sale
+3. Stop guessing capacity
+4. Increased speed and agility
+5. Stop spending money on running and maintaining data centers
+6. Go global in minutes
+
+## Seven Advantages to Cloud (Modern version of prev)
+
+1. Cost Effective: Pay what you consume
+2. Global: Launch anywhere in world
+3. Secure
+4. Reliable
+5. Scalable
+6. Elastic: automate scaling
+7. Current: Hardware/Software issues patched and upraded regularly
+
+## AWS Global Infrastructure Interview
+
+What is it: globally distributed hardware and datacenters that are physically networked together to act as one large resource
+
+Madu up of: 
+- 25 regions
+- 81 availability zones
+- 108 direct connection locations
+- 275+ points of presence
+- 11 local zones
+- 17 wavelength zones
+
+## AWS Well Architected Framework
+
+5 Pillars:
+- Operational Excellence: Run and monitor systems (automated)
+- Security: Protect data and systems
+- Reliablilty: Mitigate and recover from disruptions
+- Performance Efficiency: Efficient use of resources
+- Cost Optimization: Get lowest price.
+
+## Operational Excellence Pillar
+
+- Perform Operations as Code
+  - Limit human error, enable automation, improve response time
+- Make small, frequent, reversible changes
+  - Don't overhaul entire application in a couple changes. Test changes on certain components so you ca update them regularly
+- Anticipate failure
+  - When things break analyze the cause and learn from it, write test code that is designed to break your architecture so you can test recovery.
+- Refine operational procedures frequently
+  - Draw on past events to find continuous opportunities to improve your operations.
+
+## Security Pillar
+
+- Implement a strong identity foundation: centralize identities and implement principle of least priviledge
+- Enable traceability which helps monitor actions and changes to your environment in real time
+- Automate security best practices
+- Protect data in transit and at rest
+- Keep people away from data
+- Anticipate security events to automate recovery
+
+## Reliability Pillar
+
+- Automatically recover from failure: Monitor KPI's and trigger automation
+- Test recovery procedures: Simulate failures to prove recovery procedures
+- Scale horizontally to increase availability: Replace one large resource with multiple small resources to reduce the impact of a single failure
+- Stop guessing capacity
+- Manage change via automation
+
+## Performance Efficiency Pillar
+
+- Democratize advanced technology
+- Go global in minutes
+- Utilize serverless architecture
+- Experiment often: To find the best fit for project
+
+## Cost Optimization Pillar
+- Implement Cloud Financial Management
+- Adopt a consumption model: Pay only for what you use
+- Measure Overall efficiency
+- Stop spending money on heavy lifting: Let AWS take care of it
+- Analyze and attribute expenditure: Measure your ROI and act accordingly
+
+## 5 Tenets of AWS architecture
+
+To deliver the best possible customer experience, your AWS workloads should adhere to the following tenets
+- High Availability: eliminate single points of failure
+- Scalability: Add or remove resources on demand
+- Elasticity: Automate workloads
+- Fault Tolerance: Handle falures well
+- High Durability: Recover from failures well
+
+## High Availability
+
+Your services should remain highly available by not having on single point of failure. Done by having cloud workloads running in multiple regions and/or availability zones. Use services like Elastic Load Balancer
+
+## Scalability
+
+Ability to scale up or down. Vertical (scale up) or horizontal (scale out). First is to improve or upgrade server and the other is adding more servers.
+
+## Elasticity
+
+The ability to automatically increase or decrease your resources based on metrics you are tracing. Utilize a service such as auto scaling groups.
+
+## Fault Tolerance
+
+The ability to ensure that there is no single point of failure. Primarily uses failover strategies, for example having a secondary copy of your database ready to start using if your primary one in a different region fails.
+
+## High Durability
+
+The ability to recover from a disaster with minimal data loss.
+
+2 business strategies to consider here:
+- Recovery Time Objective (RTO) - Max amount of time your business can afford to be offline due to an incident without incurring a substantial loss
+- Recovery Point Objective (RPO) - Max amount of data that can be lost due to an incident
