@@ -359,7 +359,7 @@ Containers have everything an application needs to run on a server
 - ECS Fargate - More hands-off container management service
 - Elastic Kubernetes Service (EKS) - More hands-on container management service that utilizes Kubernetes
 
-## Serverless
+### Serverless
 
 This doesn't mean no servers just an absence of physical dedicated servers. Your programs and workloads aren't tied to a specific server.
 
@@ -428,7 +428,7 @@ S3 Glacier
 S3 Glacier Deep Archive
 - Same as Glacier but cheaper and slower
 
-## AWS Snow Family
+### AWS Snow Family
 
 Physical devices used to move data in and out of the AWS cloud
 
@@ -443,7 +443,283 @@ AWS Snowmobile
 - A literal semi truck of storage
 - 100 PB or more
 
-##
+### Elastic File System (EFS)
 
+File system that automatically grows or shrinks based on usage
 
+File systems are most commonly mounted on EC2 instances, but can also be mounted on AWS containers or Lambda functions
 
+4 storage classes to manage costs
+- Standard - usedfor regularly accessed files, most expensive
+- Standard IA - infrequently accessed files
+- One Zone - frequently accessed data that doesn't need the highest durability
+- One zone IA - Infrequent access, less durability, cheapest
+
+### Elastic Block Storage (EBS)
+
+Most useful for EC2 instances as it can be directly accessed by the OS of the instance
+
+Can be attached to multiple instances, but only one at a time.
+
+2 primary types:
+- SSD based - general purpose and provisioned IOPS
+- HDD based - Throughput optimized and cold storage.
+
+## AWS Database
+
+### Key Concepts
+
+Database stores semi structured and structures sata. This is the primary difference between database and storage, as storage is a lot more flexible in the data structure it accepts.
+
+2 types of databases:
+- Relational - Rows and Columns (like excel sheets)
+- Non-relational - Can be similar to relational, but can also work using key value pairs
+
+Generally a database is used to structure data so it is easier to access and query
+
+### Key-Value pairs
+
+Important concept with NoSQL (non relational) databases are key value pairs.
+
+A key references an attribute of an object and a value describes it.
+
+### AWS Relational DB services
+
+Relational Database Service (RDS)
+- Support for most common SQL based databases such as MySQL, MariaDB, PostgreSQL, Oracle, and Microsoft SQL server
+
+Amazon Aurora
+- Fully managed RDBS service for mySQL anf PostgreSQL
+- Highly available, durable, scalable, and secure
+- Can be serverless as well.
+
+### AWS non-relational DB services
+
+DynamoDB
+- Primary NoSQL database from WS, designed to be extremely fast, available, and scalable
+- Can scale to billions of records with guaranteed consistent data return in seconds
+
+DocumentDB
+- NoSQL document database, primarily used for MongoDB.
+
+### Other database services
+
+Redshift
+- Data warehouse solution, designed to store data in a manner similar to SQL (relational) and run extremely large and complex queries. Used for Online Analytical Processing (OLAP.)
+
+Elasticache
+- Based off of memcached and redis, an in memory data store designed to cache data for quicker access for end users
+
+Database Migration Service (DMS)
+- On premise database to AWS
+- From two databases in different or dame AWS accounts using different SQL engines
+- From SQL to NoSql databases
+
+## AWS Networking
+
+### Networking Overview (Take notes on this section later)
+
+### Virtual Private Cloud (VPC) and subnets
+
+VPC is a logically isolated section of the AWS network where you launch your AWS resources. Uses CIDR notation to specify a range of IPs to be used.
+
+Subnets are smaller partitions within your VPC's that also utilizes IP address ranges. Must have smaller IP range than your VPC
+- Subnets can either be public or private.
+
+### Security Groups and NACL's
+
+Security group work at an instance level
+- implicitly denies all traffic
+- Work off of allow rules only (stateful)
+
+Network Access Control List (NACL) work at subnet level
+- Virtual firewall at the network level
+- Uses allow and deny rules (stateless)
+
+### VPN and Direct connect
+
+Virtual Private Network (VPN) is generally the equivalent to an on-premise version of VPC. Provides an isolated secure environment to access resources
+- Can also establish a VPN between your on-premise resources and the AWS cloud.
+
+AWS direct connect allows you to create a direct, physical connection to AWS from on-premise where your traffic never touches the public internet.
+
+## AWS Security
+
+### Key Concepts
+
+An effectively secured application has security at multiple layers. For applications in the cloud we can consider 7 layers of security
+- Data - access to business/customer data, encryption
+- Application - apps stay updated and have no vulnerabilities
+- Compute - controlled access to VM's
+- Network - control access to and communications with resources
+- Perimeter - filler large scale attacks is DDos Attacls
+- Identity and Access - control access to infrastructure and change management
+- Physical - limiting access to a data center to only authorized personnel
+
+### Encryption
+
+Allows your data to stay confidential at all stages of its life cycle
+
+2 primary modes of encryption include
+- In transit - SSL/TLS
+- At rest - S3 SSE, RDS DB instances, and more
+
+One of the most popular and secure types of encryption is AES-256.
+
+Encrypted and decrypted with encrypt/decrypt keys.
+
+### AWS inspector
+
+Inspector runs a security benchmark against specified EC2 instances
+
+You can check your security and compliance state for,your EC2 resources, and use the results to fix issues.
+
+### AWS Shield
+
+Used specifically to prevent DDos attacks
+
+Inherently used with Route53 and CloudFront
+
+Standard version is free, Advanced is 3000 dollars a month
+
+### Amazon GuardDuty
+
+Threat detection services that continuously monitors your accounts for malicious activity.
+
+Uses Machibe Learning to analyze CloudTrail, DNS, and VPC Flow logs.
+
+### Virtual Private Networks (VPN)
+
+A VPN lets you establish a secure and private tunnel between your on premise network and personal devices
+
+An AWS VPN establishes the same tunnel but between your network/devices and the AWS global network
+
+2 types of AWS VPNs
+- Site-to-site VPN - connect on-premise network to VPC
+- Client VPN - connect end users to AWS or on-premise networks
+
+### AWS Web Application Firewall (WAF)
+
+Applicatio level firewall that you can write rules to allow or deny traffic to your AWS resources.
+
+Attaches to either CloudFront or App Load Balancer
+
+Protects against the 10 most dangerous attacks, including SQL injections and Cross Site Scripting.
+
+### AWS Key Management Service (KMS)
+
+KMS is a managed service that makes it easy to create and control encryption keys used to encrypt your data
+
+Best practice is to have complex rotating keys
+
+Uses envelope encryption
+
+## AWS User and Identity Management
+
+### Key Concepts
+
+When giving permissions to users, you should always follow the principle of least privilege
+- Only give enough permisiions to a user to accomplish what they need and nothing else
+
+Consider organizational compliance standards
+
+Utilize multiple layers of authentication, such as MFA on top of passwords for access.
+
+### Identity and Access Management (IAM)
+
+IAM is AWS's key service for managing users and permissions, based on JSON documents
+
+You can assign permissions to users and other AWS services
+
+There can be 3 types of IAM identities
+- Users - End users that login to the console of need programmatic access
+- Groups - Groups of end users that you can setup to share permissions
+- Roles - Used to grant other AWS services permissions to do specific API actions
+
+### Key components of an IAM policiy
+
+Statememt ID (SID): Used to label and identify each statement
+
+Effect: Specify if the policy will Allow or Deny
+
+Action: Which actions the policy will allow or deny
+
+Principal: Account, user, or role you want to allow or deny access
+
+Resource: The resource to which the action applies
+
+Condition (optional): Circumstances under which the policy is enacted
+
+### 3rd party identity providers
+
+It is possible to allow access by utilizing a 3rd party identity provider, for example using Facebook, Google, or Apple credentials
+
+Amazon Cognito is the service that handles these, and it does so by having user groups and identity pools
+- User pool is a directory of users
+- Identity pools let you give temporary credentials to a 3rd party verified user to access AWS services
+
+### Root user account
+
+Special account created upon creation of your AWS account that has full access to everything, and uses email/password to login
+
+Should be well secured with MFA and extremely limited with access. There are only a few certain things you need to login to this account for, everything else can be done with an IAM admin user.
+- Changing account settings like email address, account name
+- Restore IAM user permissions
+- Activate IAM accress to billing console
+- Close your AWS account
+- Change/Cancel AWS support plan
+
+## Application Integration
+
+### Key Concepts
+
+Application Integration refers to letting multiple independent applications work and communicate with each other, while being facilitated by an intermediate system
+
+By separating our apps into individual components, you reduce the risk of one thing breaking causing everything else to break
+
+Most common systems utilized for application integration are:
+- Queueing
+- Pub/Sub
+- Streaming
+- API/Gateways
+
+### Queueing
+
+A queueing system is a non real-time messaging system, used to process messaging and events that will delete messages once they are consumed
+
+Amazon Simple Queue Service (SQS) is a fully managed service that allows you to create queues so you can decouple and scale your systems and applications
+
+### Pub/Sub (Publish/Subscribe)
+
+Commonly used for messaging systems and notifications of events occuring
+
+Amazon Simple Notification System (SNS) is a fully managed servic to handle your pub/sub system
+
+Consists of publishers (message senders), topics (event handlers), and subscribers (message recievers)
+
+SNS flow
+- User subscribes to a topic to be notified by email when AWS account charges reacg $10
+- When account charges reach $10, SNS sends a notification to that topic
+- The message is then filtered and sorted and automatically emailed to the user notifying them of their charges
+
+### Streaming
+
+Utilizing SNS and SQS, users or services can react to events/messages in real time as they are processed
+
+Amazon Kinesis is the primary streaming service to handle analyzing real time incoming events
+
+### API Gateways
+
+API can be thought of as the middleman that sits between your application and your backend systems
+- They contain information about a request, for example when you login to facebook an API sends your login credentials to a database, and once verified it sends back the appropriate information to load your profile.
+
+Amazon API Gatewat handles APIs in your cloud environment context, and allows you to format requests and responses.
+
+### Amazon EventBridge
+
+EventBridge is used with CloudWatch, which is a service that monitors how your systems are performing and what is happening with them.
+- EventBridge processes events as they happen and can be used to trigger actions from other services
+
+Just remember that this service is used primarily to monitor what is happening with your EC2 instances
+
+## Containers
