@@ -723,3 +723,207 @@ EventBridge is used with CloudWatch, which is a service that monitors how your s
 Just remember that this service is used primarily to monitor what is happening with your EC2 instances
 
 ## Containers
+
+### Key Concepts
+
+Containers allow you to run multiple applications on the same EC2 instance that are completely isolated from each other
+
+A container comes with everything an application needs to run regardless of the underlying Operating System
+
+### Container Services
+
+Amazon Elastic Container Service (ECS)
+- Fully managed service that allows you to deploy, manage, and scale containerized applications
+- Primarily uses docker
+
+Amazon Elastic Kubernetes Service (EKS)
+- Fully managed service that helps Kubernetes control nodes, schedule containers, manage application availability, store cluster data, and other tasks
+- Work with Docker
+- More hands on
+
+AWS Fargate
+- More hands-off container management service that allows you to focus more on building applications and less on dealing with your containers and their nuances.
+
+## AWS Organizations and Accounts
+
+### Key Concepts
+
+AWS organizations is a service that allows you to create new AWS accounts tied to your businesses, and centrally manage billing, compliance, security, and share resources
+
+Root (master) account user sits at the top of the organization
+
+Organizational Units (OUs) are grous of AWS accounts. Can be nested
+
+Service Control Policies act as guardrails for your organization, setting boundaries on what your accounts are able to do.
+
+### Organizations Visualized 2:21:20 (Take notes on this)
+
+### Organizations and SCPs
+
+Organizations are useful if you have a bunch of diferent users/departments that need access to services
+- Can enable consolidated billing to send bill to one account. 
+- Can see which accounts are incurring which costs
+- Automate new account creation and automatically apply appropriate permissions
+- Automate infrastructure deployment in specific accounts
+- Easily share resources across accounts
+
+Service Control Policies (SCPs) set guardrails for all accounts in your organization (not users or roles)
+- They only filter and never add permissions, so still need to use IAM policies as we;;
+- Avoid attaching SCPs to the root account of your organization, this could have unwanted effects on accounts in an OU.
+
+## Governance and Compliance
+
+### Key Concepts 
+
+Sometimes your organization, or an organization that you work with requires things to be done in a particular way for compliance reasons, security reasons, or otherwise
+
+AWS has services to automatically ensure your cloud resources are all compliant, and any changes made are recorded and verified with the rules laid out.
+
+AWS Artifact is your one stop shop for security and compliance reports.
+
+### AWS config
+
+Config is a service used to manage changes in your AWS account and make sure they are compliant with processes set by your organization
+
+Region specific
+
+Common use cases
+- Ensure a resource stays configured in a specific way
+- Keep track of all configuration changes to a resources
+- List all resources within a region
+- Assist with a security analysis by detailing historical information and changes
+
+### Cloud Formation
+
+CloudFormation is a service that allows you to make templates to specify how you want architecture deployed
+
+You can reuse templates to quickly deploy/edit your architecture configuration automatically
+
+Helps eliminate user error when deploying resources.
+
+### Tagging 
+
+Tagging involves identifying your resources with key value pairs, and is one of the best way to manage costs.
+
+Examples
+- Department = Accounting
+- Status = Approved
+- Environment = Production
+- Location = United States
+
+Can group tagged resources into resource groups, allowing you to better organize them and apply permissions to groups of resources
+
+Aside from tracking and managing costs they re helpful for the following reasons:
+- manage resources to see how much a certain resource has allocated
+- automation
+- governance and compliance
+- Helps classify data and subsequent security impacts
+
+### AWS License Manager
+
+There are times where certain software requires a license to run, AWS License Manager allows you to centrally manage these licenses.
+
+Licenses can be based on virtual cores (vCPUs), physical cores, sockets, or number of machines
+
+AWS License Manager works with:
+- EC2 dedicated instances, dedicated hosts, spot instances
+- Oracle databases in RDS
+
+## Logging
+
+### Key Concepts
+
+It is very important to remember that things will go wrong, it is unavoidable.
+
+Logging helps you pinpoint failure points, determine the cause of the failure, and automattically remediate it.
+
+AWS has a few types of logging services but there are 2 primary areas you monitor
+- Your infrastructure itself (what is happening)
+- Any changes and access to your infrastructure (who did what)
+
+### AWS CloudWatch
+
+Monitors what is happening with your infrastructure, consists of a few different services:
+- Logs: centralized area to store log data
+- Metrics: time ordered data points (variables) - EventBridge: monitors for specified events and will trigger actions when those events occur
+- Alarms: trigger notifications based on metrics
+- Dashboards: Visualize what is happening based on collected metrics
+
+CloudWatch alarms have 3 states
+- OK: metric within defined threshold
+- Alarm: Metric is outside of the defined threshold
+- INSUFFICIENT_DATA: alarm has just started of not enough data is available
+
+### AWS CloudTrail
+
+If asked how to track API calls or user access, think CloudTrail
+
+Monitors API calls and actions made on an AWS account with the following
+- Where: Source IP Address
+- When: Event Time
+- Who: User
+- What: Region/Resource/Action
+
+Trails are stored in S3 and are analyzed with Amazon Athena
+- Athena is a serverless SQL like service that is primarily used to analyze data stored in S3
+
+## Pricing and Billing
+
+### Total Cost of Ownership
+
+TCO is one of the largest value adds of using cloud, so it is important to know.
+
+Compare the cost of:
+- Owning and maintaining your own on-premise physical servers and data centers, and hiring people to do that.
+- Using AWS servers and adopting a pay as you go model.
+
+(write about diagram)
+
+### AWS Pricing Calculator
+
+The pricing calculator is a free tool that can be used to estimate the cost of various AWS services
+
+Contains over 100 services you can use in your estimate
+
+Can be used to figure out your final TCO as you estimate your costs in the cloud, and compare them to your on-premise costs.
+
+### AWS Budgets
+
+Setup budgets that can send you alerts if you are approaching of exceeding your defined budget
+
+Cost, Usage, Reservation budgets
+
+Can be tracked at a monthly, quarterly, yearly levels
+
+Can create budget reports to send out.
+
+### AWS Cost and Usage Reports
+
+Detailed spreadsheets that help you to better analyze and understand your AWS costs
+
+Will contain allocation tags
+
+### AWS Cost Explorer
+
+Helps you visualize, understand, and manage your AWS costs and usage over time.
+
+Can view data at monthly or daily level of granularity
+
+### Cost allocation tags
+
+Allows you to identify each resource so that when costs are reported, you know where each expense came from
+
+Can be 1 of 2 types
+- User Defined (Production)
+- AWS Generated (aws:createdBy)
+
+### AWS Consolidated Billing
+
+A feature of AWS Organizations that allows you to pay for multiple AWS accounts with one bill
+
+Designate a master account that pays the charges of other member accounts
+
+Use Cost Explorer to visualize usage for consolidated billing
+
+### AWS free services
+
