@@ -927,3 +927,90 @@ Use Cost Explorer to visualize usage for consolidated billing
 
 ### AWS free services
 
+AWS has a free-tier for a few resources that allow you to use them for free for your first 12 months of signup, or until you reach a specified monthly limit
+
+The below services are free forever, as opposed to the free-tiew which is free up to a point
+- IAM
+- VPC
+- Auto Scaling *May generate paid services
+- CloudFormation
+- Elastic Beanstalk *May generate paid services
+- Opsworks
+- Amplify
+- Appsync
+- Organizations and Consolidated Billing
+- AWS Cost Explorer
+
+## AWS Support and Helpful Services
+
+### AWS Support Plans
+
+Basic
+- Email support only for Billing and Account
+- 7 trusted advisor checks
+- Free
+
+Developer
+- Tech support via email ~24 hour response time for general guidance and system impaired
+- 7 trusted advisor checks
+- $29/ month or 3% of monthly AWS usage, whichever is greater
+
+Business
+- Tech support via email, chat, and phone 24/7
+- Same benefits as developer, with production support
+- All trusted advisor checks
+- 100 a month or 3-10% of monthly AWS usage
+
+Enterprise
+- TAM (Technical Account Manager) and all benefits of everything above. TAM is an AWS employee dedicated to your architecture
+- 15000 a month or 3-10% of monthly AWS usage
+
+### AWS Trusted Advisor
+
+A recommendation tool that automatically and actively monitors your AWS account to provide actionable reccomendations across a series of categories
+
+5 categories of AWS Trusted Advisor
+- Cost Optimization
+- Performance
+- Security
+- Fault Tolerance
+- Service Limits
+
+### AWS Marketplace
+
+A curated digital catalg with thousands of software listings from independent software vendors
+
+Products can be free or paid, charges come with your AWS bill
+
+Products can be offered as:
+- AMIs
+- AWS CloudFormation templates
+- SaaS offerings
+- Web ACL
+- AWS WAF rules
+
+### AWS Service Health Dashboard
+
+Service Health Dashboard shows the general status of AWS services
+
+### AWS Personal Health Dashboard
+
+Provides alerts and guidance for AWS events that might affect your environment
+
+### Terms of abuse
+
+AWS Trust and Safety is a team that specifically deals with abuse occuring on the AWS platfrm for specific issues.
+
+Typically issues are related to behavior that could cause harm to AWS infrastructure or other customers using the same server
+
+### AWS Partner Network
+
+The APN is a global partner for AWS. Your organization can join it to increase exposure to and opportunities with AWS
+
+Can be 1 of 2 partners:
+- Consulting Partner - you help companies utilize AWS
+- Tech partner - you build tech on top of AWS as a service offering
+
+## Service Definitions
+
+Review this for last minute test prep before the exa,. (2:47:42)
