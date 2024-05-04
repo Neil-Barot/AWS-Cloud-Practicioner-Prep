@@ -1014,3 +1014,5 @@ Can be 1 of 2 partners:
 ## Service Definitions
 
 Review this for last minute test prep before the exa,. (2:47:42)
+
+https://www.youtube.com/watch?v=JsmhEgIV1mQ&list=LL&index=6&t=1796s
