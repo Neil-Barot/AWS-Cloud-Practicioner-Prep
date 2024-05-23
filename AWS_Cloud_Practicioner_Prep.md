@@ -1016,3 +1016,58 @@ Can be 1 of 2 partners:
 Review this for last minute test prep before the exa,. (2:47:42)
 
 https://www.youtube.com/watch?v=JsmhEgIV1mQ&list=LL&index=6&t=1796s
+
+## All services:
+
+Certainly! For the AWS Certified Cloud Practitioner exam, it's important to have a broad understanding of various AWS services, especially those frequently used and foundational to AWS infrastructure. Here’s a list of key AWS services that you might encounter on the exam:
+
+### Compute
+- **Amazon EC2** (Elastic Compute Cloud): Provides scalable computing capacity.
+- **AWS Lambda**: Runs code in response to events and automatically manages the compute resources.
+- **Amazon LightSail**: Offers an easy-to-use cloud platform that provides everything needed to build an application or website.
+- **AWS Elastic Beanstalk**: An easy-to-use service for deploying and scaling web applications and services.
+
+### Storage
+- **Amazon S3** (Simple Storage Service): Object storage service that offers industry-leading scalability, data availability, security, and performance.
+- **Amazon EBS** (Elastic Block Store): Provides block level storage volumes for use with EC2 instances.
+- **Amazon Glacier**: Low-cost storage service for data archiving and long-term backup.
+- **AWS Storage Gateway**: A hybrid storage service that enables your on-premises applications to seamlessly use AWS cloud storage.
+
+### Database
+- **Amazon RDS** (Relational Database Service): Makes it easy to set up, operate, and scale a relational database in the cloud.
+- **Amazon DynamoDB**: A fast and flexible NoSQL database service for all applications that need consistent, single-digit millisecond latency at any scale.
+- **Amazon Redshift**: A fast, scalable data warehouse that makes it simple and cost-effective to analyze all your data across your data warehouse and data lake.
+
+### Networking
+- **Amazon VPC** (Virtual Private Cloud): Lets you provision a logically isolated section of the AWS Cloud where you can launch AWS resources in a virtual network that you define.
+- **AWS Direct Connect**: Makes it easy to establish a dedicated network connection from your premises to AWS.
+- **Amazon Route 53**: A scalable and highly available Domain Name System (DNS) web service.
+
+### Migration & Transfer
+- **AWS Migration Hub**: Provides a single location to track the progress of application migrations across multiple AWS and partner solutions.
+- **AWS DataSync**: Used to move large amounts of data online between on-premises storage and Amazon S3 or Amazon EFS.
+
+### Management & Governance
+- **AWS CloudWatch**: Monitors your AWS resources and the applications you run on AWS in real time.
+- **AWS Auto Scaling**: Monitors your applications and automatically adjusts capacity to maintain steady, predictable performance at the lowest possible cost.
+- **AWS CloudFormation**: Provides a common language for you to describe and provision all the infrastructure resources in your cloud environment.
+- **AWS CloudTrail**: Provides a history of AWS API calls for your account, including API calls made via the AWS Management Console, AWS SDKs, command line tools, and higher-level AWS services.
+
+### Security, Identity, & Compliance
+- **AWS IAM** (Identity and Access Management): Manages access to AWS services and resources securely.
+- **Amazon Cognito**: Provides user identity and data synchronization services that enable secure user access to your apps.
+- **AWS Shield**: A managed Distributed Denial of Service (DDoS) protection service that safeguards applications running on AWS.
+- **AWS WAF** (Web Application Firewall): Helps to protect your web applications from common web exploits.
+
+### Analytics
+- **Amazon EMR** (Elastic MapReduce): A cloud-native big data platform, allowing processing of vast amounts of data quickly and cost-effectively across resizable clusters of Amazon EC2 instances.
+- **AWS Glue**: A fully managed extract, transform, and load (ETL) service that makes it simple and cost-effective to categorize your data, clean it, enrich it, and move it reliably between various data stores.
+
+### Machine Learning
+- **Amazon SageMaker**: Provides every developer and data scientist with the ability to build, train, and deploy machine learning models quickly.
+
+### Application Integration
+- **AWS Step Functions**: Coordinates multiple AWS services into serverless workflows so you can build and update apps quickly.
+- **Amazon SNS** (Simple Notification Service): Pub/sub, SMS, email, and mobile push notifications.
+
+These services are commonly covered on the AWS Certified Cloud Practitioner exam and provide a strong foundation in understanding how AWS works and the various solutions it provides. Knowing these services, what they do, and when to use them will be crucial for passing the exam.
